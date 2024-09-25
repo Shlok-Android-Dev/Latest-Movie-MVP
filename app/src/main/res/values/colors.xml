@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primaryColor">#D16AE6</color>
+    <color name="grey">#767575</color>
+    <color name="color_preloader_start">#000000</color>
+    <color name="color_preloader_center">#F1823BE7</color>
+    <color name="color_preloader_end">#D16AE6</color>
+</resources>
