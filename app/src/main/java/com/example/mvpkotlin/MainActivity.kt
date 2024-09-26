@@ -83,12 +83,16 @@ class MainActivity : AppCompatActivity(), MovieListContract.View {
                 val visibleItemCount = layoutManager.childCount
                 val totalItemCount = layoutManager.itemCount
                 val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
-
+                Log.d(TAG, "visible Item coundt: $visibleItemCount ")
+                Log.d(TAG, "total Item coundt: $totalItemCount ")
+                Log.d(TAG, "first Visible Item position: $firstVisibleItemPosition ")
                 if (!isLoading && !isLastPage) {
                     if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount
                         && firstVisibleItemPosition >= 0) {
                         pageNo++
+                        Log.d(TAG, "page No: $pageNo")
                         moviePresenter.requestDataFromServer(selectedMovieType, pageNo)
+                        Log.d(TAG, "moviePresenter: $moviePresenter")
                     }
                 }
             }
@@ -109,25 +113,11 @@ class MainActivity : AppCompatActivity(), MovieListContract.View {
     override fun setDataToRecyclerview(movieListArray: List<ResultX>) {
 
         movieList.addAll(movieListArray)
-        movieListAdapter = MovieListAdapter( applicationContext,movieList)
         movieListAdapter.notifyDataSetChanged()
-        rvMovieList.adapter = movieListAdapter
         if (movieListArray.isEmpty()) {
             isLastPage = true  //
         }
-//        if (movieListAdapter == null) {
-//            movieListAdapter = MovieListAdapter(this, movieList)
-//            rvMovieList.adapter = movieListAdapter
-//        }else{
-//            Log.d(TAG, "setDataToRecyclerview: $movieListAdapter")
-//        }
-//
-//        movieList.addAll(movieListArray)
-//        movieListAdapter.notifyDataSetChanged()
-//        if (movieListArray.isEmpty()) {
-//            isLastPage = true
-//
-//        } else Log.d(TAG, "setDataToRecyclerview: $movieListArray")
+
     }
 
     override fun onResponseFailure(throwable: Throwable) {
