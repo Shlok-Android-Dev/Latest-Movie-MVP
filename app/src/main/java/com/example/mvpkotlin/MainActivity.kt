@@ -19,13 +19,14 @@ import com.example.mvpkotlin.view.MovieListAdapter
 class MainActivity : AppCompatActivity(), MovieListContract.View {
 
     private val TAG = "MainActivity"
+    private val movieTypeLabels = listOf("Popular", "Playing", "Top Rated", "Upcoming")
     private var movieTypes: List<String> = listOf("movie/popular","movie/now_playing", "movie/top_rated", "movie/upcoming")
     private lateinit var autoCompleteTxt: AutoCompleteTextView
     private var selectedMovieType: String = "movie/popular"
     private lateinit var moviePresenter: MoviePresenter
     private lateinit var rvMovieList: RecyclerView
     private lateinit var movieList: MutableList<ResultX>
-    lateinit var movieListAdapter: MovieListAdapter
+    private lateinit var movieListAdapter: MovieListAdapter
     private lateinit var pbLoading: ProgressBar
 
     var pageNo: Int = 1
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity(), MovieListContract.View {
         moviePresenter = MoviePresenter(this)
 
         // Set up AutoCompleteTextView for movie types
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, movieTypes)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line,movieTypeLabels /*movieTypes*/)
         autoCompleteTxt.setAdapter(adapter)
 
         // Handle selection from the dropdown

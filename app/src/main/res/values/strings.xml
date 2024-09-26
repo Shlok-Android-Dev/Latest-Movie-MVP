@@ -2,7 +2,7 @@
     <string name="app_name">Movie Details</string>
     <string name="over_view_movie">Over View Movie</string>
     <string name="release_date">Release Date</string>
-    <string name="Select">Select Item</string>
+    <string name="Select">Select Movie Type</string>
     <string name="movie_name">Movie Name</string>
 
 </resources>
