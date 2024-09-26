@@ -17,6 +17,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -34,7 +35,6 @@ android {
         jvmTarget = "1.8"
     }
 }
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -57,5 +57,6 @@ dependencies {
     implementation(libs.okhttp)
     // OkHttp Logging Interceptor for logging network requests
     implementation(libs.logging.interceptor)
+    implementation(libs.showmoretextview)
 
 }

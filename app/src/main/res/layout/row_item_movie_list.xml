@@ -67,16 +67,18 @@
                     android:layout_marginTop="10dp"
                     />
 
-                <TextView
+                <com.sanjayprajapat.showmoretextview.ShowMoreTextView
                     android:id="@+id/tvOverviewMovie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
                     android:text="@string/over_view_movie"
-                    android:textSize="16sp"
+                    android:textSize="15sp"
                     android:layout_marginTop="8dp"
+                    app:showMoreMaxLine="3"
+                    app:showMoreTextColor="#A2E91E63"
+                    app:showMoreText="...Show More"
                     />
-
 
             </LinearLayout>
 
